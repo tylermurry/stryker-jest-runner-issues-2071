@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Person Service Tests should generate a minor 1`] = `
+Object {
+  "firstName": "Joe",
+  "fullName": "Joe Smith",
+  "lastName": "Smith",
+  "minor": true,
+  "retired": false,
+}
+`;
+
+exports[`Person Service Tests should generate a normal person 1`] = `
+Object {
+  "firstName": "John",
+  "fullName": "John Smith",
+  "lastName": "Smith",
+  "minor": false,
+  "retired": false,
+}
+`;
+
+exports[`Person Service Tests should generate a retired person 1`] = `
+Object {
+  "firstName": "Jane",
+  "fullName": "Jane Smith",
+  "lastName": "Smith",
+  "minor": false,
+  "retired": true,
+}
+`;
