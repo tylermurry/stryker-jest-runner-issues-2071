@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Request Service Tests should return an empty body for a no-content response 1`] = `
+Object {
+  "body": null,
+  "rawResponse": Response {
+    "size": 0,
+    "timeout": 0,
+    Symbol(Body internals): Object {
+      "body": null,
+      "disturbed": true,
+      "error": null,
+    },
+    Symbol(Response internals): Object {
+      "counter": undefined,
+      "headers": Headers {
+        Symbol(map): Object {},
+      },
+      "status": 204,
+      "statusText": "No Content",
+      "url": "http://someurl.com/",
+    },
+  },
+}
+`;
+
+exports[`Request Service Tests should return the correct JSON response for a GET request with no options 1`] = `
+Object {
+  "body": Object {
+    "some": "get data",
+  },
+  "rawResponse": Response {
+    "size": 0,
+    "timeout": 0,
+    Symbol(Body internals): Object {
+      "body": Object {
+        "data": Array [
+          123,
+          34,
+          115,
+          111,
+          109,
+          101,
+          34,
+          58,
+          34,
+          103,
+          101,
+          116,
+          32,
+          100,
+          97,
+          116,
+          97,
+          34,
+          125,
+        ],
+        "type": "Buffer",
+      },
+      "disturbed": true,
+      "error": null,
+    },
+    Symbol(Response internals): Object {
+      "counter": undefined,
+      "headers": Headers {
+        Symbol(map): Object {
+          "Content-Length": Array [
+            "19",
+          ],
+          "Content-Type": Array [
+            "application/json",
+          ],
+        },
+      },
+      "status": 200,
+      "statusText": "OK",
+      "url": "http://someurl.com/",
+    },
+  },
+}
+`;
+
+exports[`Request Service Tests should return the correct JSON response for a POST request with options 1`] = `
+Object {
+  "body": Object {
+    "some": "post data",
+  },
+  "rawResponse": Response {
+    "size": 0,
+    "timeout": 0,
+    Symbol(Body internals): Object {
+      "body": Object {
+        "data": Array [
+          123,
+          34,
+          115,
+          111,
+          109,
+          101,
+          34,
+          58,
+          34,
+          112,
+          111,
+          115,
+          116,
+          32,
+          100,
+          97,
+          116,
+          97,
+          34,
+          125,
+        ],
+        "type": "Buffer",
+      },
+      "disturbed": true,
+      "error": null,
+    },
+    Symbol(Response internals): Object {
+      "counter": undefined,
+      "headers": Headers {
+        Symbol(map): Object {
+          "Content-Length": Array [
+            "20",
+          ],
+          "Content-Type": Array [
+            "application/json",
+          ],
+        },
+      },
+      "status": 200,
+      "statusText": "OK",
+      "url": "http://someurl.com/",
+    },
+  },
+}
+`;
+
+exports[`Request Service Tests should return the correct error payload if the request fails 1`] = `
+"{
+  \\"request\\": {
+    \\"url\\": \\"http://someurl.com/\\"
+  },
+  \\"response\\": {
+    \\"status\\": 500,
+    \\"body\\": \\"some error message\\"
+  }
+}"
+`;
+
+exports[`Request Service Tests should return the correct error payload if the request fails and masks the authorization header properly 1`] = `
+"{
+  \\"request\\": {
+    \\"url\\": \\"http://someurl.com/\\",
+    \\"options\\": {
+      \\"headers\\": {
+        \\"Authorization\\": \\"***\\"
+      }
+    }
+  },
+  \\"response\\": {
+    \\"status\\": 500,
+    \\"body\\": \\"some error message\\"
+  }
+}"
+`;
